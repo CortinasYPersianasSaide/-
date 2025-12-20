@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cortina 2 en uno-Cortinas y Persianas Saide</title>
+
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    background:#f0f0f0;
+    margin:0;
+  }    
+
+  header{
+    background:#111;
+    color:white;
+    padding:15px;
+    text-align:center;
+      font-family: 'Allura', cursive;
+  }
+
+  .producto{
+    max-width:1000px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.1);
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+
+  /* CARRUSEL */
+  .carousel{
+    position:relative;
+    width:100%;
+    max-width:420px;
+  }
+
+  .carousel img{
+    width:100%;
+    border-radius:12px;
+    object-fit:cover;
+    display:block;
+  }
+
+  .carousel button{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,.6);
+    color:white;
+    border:none;
+    font-size:28px;
+    padding:6px 12px;
+    cursor:pointer;
+    border-radius:50%;
+  }
+
+  .carousel button:hover{
+    background:rgba(0,0,0,.8);
+  }
+
+  .prev{ left:10px; }
+  .next{ right:10px; }
+
+  /* INFO */
+  .info{
+    flex:1;
+  }
+
+  .info h2{
+    font-size:2rem;
+    margin-bottom:10px;
+  }
+
+  .info p{
+    line-height:1.6;
+    margin-bottom:20px;
+  }
+
+  .info ul{
+    margin-bottom:20px;
+  }
+
+  .btn{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+  }
+
+  .btn:hover{
+    background:#1ebe5d;
+  }
+
+  @media(max-width:768px){
+    .producto{
+      flex-direction:column;
+      align-items:center;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+<header>
+  <h1>Cortinas y Persianas Saide</h1>
+</header>
+
+<div class="producto">
+
+  <!-- CARRUSEL JPG -->
+  <div class="carousel">
+    <img id="slide" src="cs1.jpg" alt="Producto">
+    <button class="prev" onclick="prev()">&#10094;</button>
+    <button class="next" onclick="next()">&#10095;</button>
+  </div>
+
+  <!-- INFO -->
+  <div class="info">
+    <h2>Cortina 2 en 1</h2>
+
+    <p>
+Disfruta de la versatilidad total en tus ventanas con un solo sistema. Esta cortina combina una capa traslúcida para iluminar tus espacios con luz natural durante el día, y una capa Blackout de alta calidad para cuando necesites oscuridad total y privacidad absoluta.
+    <h3>Características</h3>
+    <ul>
+      <li>Doble Funcion</li>
+      <li>Diseño inteligente</li>
+      <li>Facil instalacion</li>
+    </ul>
+
+    <a class="btn" href="https://wa.me/573219881967?text=Hola%2C%20me%20gustaria%20recibir%20informacion%20sobre%20la%20cortina%202%20en%201" target="_blank">
+      Cotizar por WhatsApp
+    </a>
+  </div>
+
+</div>
+
+<script>
+  const images = [
+    'cs1.jpg',
+    'cs2.jpg',
+    'cs3.jpg'
+  ];
+
+  let index = 0;
+  const slide = document.getElementById('slide');
+
+  function show(){
+    slide.src = images[index];
+  }
+
+  function next(){
+    index = (index + 1) % images.length;
+    show();
+  }
+
+  function prev(){
+    index = (index - 1 + images.length) % images.length;
+    show();
+  }
+</script>
+
+</body>
+</html>
